@@ -177,7 +177,7 @@ if has('autocmd')
     autocmd BufNewFile *
           \ if &modifiable |
           \   set ff=unix |
-          \   let s:Template = expand('~/.template/template.' . substitute(bufname('%'), '.\{-\}\.*\([^.]*\)$', '\1', '')) |
+          \   let s:Template = expand('~/.vim/template/template.' . substitute(bufname('%'), '.\{-\}\.*\([^.]*\)$', '\1', '')) |
           \   if filereadable(s:Template) |
           \     execute '0read ' . s:Template |
           \     normal Gdd |
@@ -219,7 +219,7 @@ set listchars=tab:>-,trail:-,nbsp:%
 set modeline
 set number
 set ruler
-set showbreak=>>
+" set showbreak=>>
 set shellslash
 set showcmd
 set smartindent
