@@ -19,6 +19,7 @@ Run the following commands in your terminal with bash/zsh:
     cd .vim
     git submodule update --init
     cd
+    ln -s .vim/.ctags .
     ln -s .vim/.gvimrc .
     ln -s .vim/.vimrc .
     vim
