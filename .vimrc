@@ -151,7 +151,7 @@ if has('autocmd')
           \ setlocal tags+=~/.gem/tags |
           \ call s:ToggleIsKeyword(':,?,!', 1) |
 
-    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|nsis\|sass\|vim\)$'
+    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|nsis\|sass\|vim\|scala\)$'
     let s:indent8_regex = '^\%(css\|gitconfig\)$'
 
     function! s:BufEnter()
@@ -489,7 +489,7 @@ let Tlist_Compact_Format = 1
 let Tlist_Ctags_Cmd = 'ctags --fields=+lS'
 let Tlist_File_Fold_Auto_Close = 1
 
-let Tlist_Use_Right_Window = 0
+let Tlist_Use_Right_Window = 1
 let Tlist_Exit_OnlyWindow = 1
 
 let Tlist_WinWidth = 40
@@ -498,9 +498,9 @@ let Tlist_WinWidth = 40
 let g:acp_enableAtStartup = 0
 " Use neocomplcache in non-python files, use Pydiction in python files.
 au BufRead,BufNewFile * if &ft != "python" | let g:neocomplcache_enable_at_startup = 1 |
-          \ let g:pydiction_location = '' |
-          \ else | let g:pydiction_location = $HOME.'/.vim/bundle/Pydiction/complete-dict' |
-          \ endif
+      \ let g:pydiction_location = '' |
+      \ else | let g:pydiction_location = $HOME.'/.vim/bundle/Pydiction/complete-dict' |
+      \ endif
 
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
@@ -523,13 +523,13 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Define dictionary.
 let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'python' : ''
-    \ }
+      \ 'default' : '',
+      \ 'python' : ''
+      \ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
+  let g:neocomplcache_keyword_patterns = {}
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
@@ -542,13 +542,10 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
-        let g:neocomplcache_omni_patterns = {}
+  let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-
-" Python 文件的一般设置，比如不要 tab 等"
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 
 " vim: set sts=2 sw=2:
