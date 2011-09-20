@@ -497,11 +497,15 @@ let Tlist_WinWidth = 40
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache in non-python files, use Pydiction in python files.
-au BufRead,BufNewFile * if &ft != "python" | let g:neocomplcache_enable_at_startup = 1 |
+let pydict = $HOME.'/.vim/bundle/Pydiction/complete-dict'
+if (has('win32') || has('win64'))
+  let pydict = substitute(pydict, '/', '\\', 'g')
+endif
+au BufRead,BufNewFile,BufEnter * if &ft != "python" | let g:neocomplcache_enable_at_startup = 1 |
       \ let g:pydiction_location = '' |
-      \ else | let g:pydiction_location = $HOME.'/.vim/bundle/Pydiction/complete-dict' |
+      \ else | let g:pydiction_location = pydict |
       \ endif
-
+autocmd FileType python let g:pydiction_location = pydict
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
@@ -547,5 +551,9 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+" vim IM cloud input
+let g:vimim_cloud="sogou"
+" let g:vimim_cloud=-1
 
 " vim: set sts=2 sw=2:

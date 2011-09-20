@@ -21,6 +21,7 @@ Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/tpope/vim-fugitive.git'
 Bundle 'git://github.com/tpope/vim-git.git'
 Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'git://github.com/imsizon/vim-preview.git'
 Bundle 'git://github.com/tpope/vim-ragtag.git'
 Bundle 'git://github.com/tpope/vim-repeat.git'
 Bundle 'git://github.com/tpope/vim-speeddating.git'
@@ -52,3 +53,6 @@ Bundle "git://github.com/vim-scripts/indentpython.vim--nianyang.git"
 
 " Scala
 Bundle "git://github.com/derekwyatt/vim-scala.git"
+
+" VIMIM
+Bundle "git://github.com/vim-scripts/VimIM.git"
