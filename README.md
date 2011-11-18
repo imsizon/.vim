@@ -50,17 +50,15 @@ Add scala support to taglist
 
 Edit $VIM_CONFIG_PATH/bundle/taglist.vim/plugin/taglist.vim
 
-    ```vim
-    " scala language
-    let s:tlist_def_scala_settings = 'scala;t:trait;c:class;T:type;' .
-                          \ 'm:method;C:constant;l:local;p:package;o:object'
-
-    ```
+```vim
+" scala language
+let s:tlist_def_scala_settings = 'scala;t:trait;c:class;T:type;' .
+                      \ 'm:method;C:constant;l:local;p:package;o:object'
+```
 
 after
 
-    ```vim
-    " yacc language
-    let s:tlist_def_yacc_settings = 'yacc;l:label'
-
-    ```
+```vim
+" yacc language
+let s:tlist_def_yacc_settings = 'yacc;l:label'
+```
