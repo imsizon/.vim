@@ -14,6 +14,7 @@ Bundle 'git://github.com/rainux/desert.vim.git'
 Bundle 'bufexplorer.zip'
 Bundle 'vim2ansi'
 Bundle "xml.vim"
+Bundle "https://github.com/altercation/vim-colors-solarized.git"
 
 " Programming:
 Bundle 'git://github.com/godlygeek/tabular.git'
@@ -53,6 +54,10 @@ Bundle "git://github.com/vim-scripts/indentpython.vim--nianyang.git"
 
 " Scala
 Bundle "git://github.com/derekwyatt/vim-scala.git"
+
+" Haskell
+Bundle "https://github.com/vim-scripts/haskell.vim.git"
+Bundle "https://github.com/kevinstreit/VIM-Haskell.git"
 
 " VIMIM
 Bundle "git://github.com/vim-scripts/VimIM.git"

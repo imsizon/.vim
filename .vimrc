@@ -106,6 +106,8 @@ function! s:VimInit()
   behave xterm
   " Restore CTRL-A to increase number instead of Select All
   unmap <C-A>
+  " Restore CTRL-V to Column Visual Mode instead of Paste
+  unmap <C-V>
   " Restore CTRL-S to nop (will be used by vim-surround) instead of Save
   iunmap <C-S>
 endfunction
@@ -125,6 +127,9 @@ endif
 if &t_Co > 2 || has('gui_running')
   syntax on
   set hlsearch
+  " let g:solarized_termcolors=256
+  " set background=dark
+  color solarized
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -551,6 +556,12 @@ endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+" haskell
+au BufEnter *.hs compiler ghc
+" Configure browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
 
 " vim IM cloud input
 let g:vimim_cloud="sogou"
