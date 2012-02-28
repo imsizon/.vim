@@ -16,40 +16,8 @@ function! s:MultiEncodingSetting()
       let can_set_fenc = 0
     endif
 
-    " CJK environment detection and corresponding setting
-    if v:lang =~ '^zh_CN'
-      " Simplified Chinese, on Unix euc-cn, on MS-Windows cp936
-      set encoding=chinese
-      set termencoding=chinese
-      if can_set_fenc
-        set fileencoding=chinese
-      endif
-    elseif v:lang =~ '^zh_TW'
-      " Traditional Chinese, on Unix euc-tw, on MS-Windows cp950
-      set encoding=taiwan
-      set termencoding=taiwan
-      if can_set_fenc
-        set fileencoding=taiwan
-      endif
-    elseif v:lang =~ '^ja_JP'
-      " Japanese, on Unix euc-jp, on MS-Windows cp932
-      set encoding=japan
-      set termencoding=japan
-      if can_set_fenc
-        set fileencoding=japan
-      endif
-    elseif v:lang =~ '^ko'
-      " Korean on Unix euc-kr, on MS-Windows cp949
-      set encoding=korea
-      set termencoding=korea
-      if can_set_fenc
-        set fileencoding=korea
-      endif
-    endif
-
-    " Detect UTF-8 locale, and override CJK setting if needed
+    set encoding=utf-8
     if v:lang =~ 'utf8$' || v:lang =~ 'UTF-8$'
-      set encoding=utf-8
       if has('unix')
         " Only use UTF-8 termencoding when we're in Linux/Unix, cause Windows
         " does not support UTF-8. Mac? I don't know :p
