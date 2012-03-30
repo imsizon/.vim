@@ -178,6 +178,7 @@ set background=dark
 set backspace=indent,eol,start
 set completeopt=menuone,longest,preview
 set directory=~/.tmp,.,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
 set fileformats=unix,dos
 set guicursor=a:blinkon0
 set grepprg=grep\ -nH\ $*
