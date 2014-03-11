@@ -5,6 +5,8 @@
 
 source ~/.vim/vundle.vim
 
+set rtp+=$GOROOT/misc/vim
+
 " Multi-encoding setting
 function! s:MultiEncodingSetting()
   if has('multi_byte')
@@ -96,8 +98,8 @@ if &t_Co > 2 || has('gui_running')
   syntax on
   set hlsearch
   " let g:solarized_termcolors=256
-  " set background=dark
-  color solarized
+  set background=dark
+  colorscheme hemisu
 endif
 
 " Only do this part when compiled with support for autocommands.

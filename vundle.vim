@@ -15,6 +15,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'vim2ansi'
 Bundle "xml.vim"
 Bundle "https://github.com/altercation/vim-colors-solarized.git"
+Bundle "https://github.com/noahfrederick/vim-hemisu.git"
 
 " Programming:
 Bundle 'git://github.com/godlygeek/tabular.git'
