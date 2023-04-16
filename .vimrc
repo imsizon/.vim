@@ -5,7 +5,7 @@
 
 source ~/.vim/vundle.vim
 
-set rtp+=$GOROOT/misc/vim
+" set rtp+=$GOROOT/misc/vim
 
 " Multi-encoding setting
 function! s:MultiEncodingSetting()
